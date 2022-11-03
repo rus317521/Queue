@@ -5,7 +5,7 @@ public class Person {
 
     public Person(String name, String surname, int count) {
         this.name = name;
-        this.surname - surname;
+        this.surname = surname;
         this.count = count;
 
     }
