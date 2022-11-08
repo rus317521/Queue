@@ -19,8 +19,7 @@ public class Main {
         Queue<Person> queue = new LinkedList<>();
 
         LinkedList<Person> clients = generateClients();
-       /* for(int i=0;i<clients.size();i++)
-        {queue.add(clients[i]);}*/
+
         for (Person person : clients
         ) {
             queue.add(person);
@@ -28,11 +27,14 @@ public class Main {
         }
         while (true) {
             if (queue.isEmpty()) break;
-            Person personMinus = new Person(queue.peek().name, queue.peek().surname, queue.peek().count - 1);
-            if (personMinus.count != 0) {
-                queue.add(personMinus);
+            Person person = queue.poll(); //одновременно вернули и удалили элемент из очереди
+
+            person.spendTicket(); //Уменьшили кол-во билетов
+            if (person.getCount() != 0) {
+
+                queue.offer(person); //Добавили Person в конец очереди
             }
-            System.out.println(queue.peek().name + " " + queue.poll().surname + " Прокатился на оттракционе ");
+            System.out.println(person.getName() + " " + person.getSurname() + " Прокатился на оттракционе ");
         }
 
     }

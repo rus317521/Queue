@@ -1,7 +1,7 @@
 public class Person {
-    protected String name;
-    protected String surname;
-    protected int count;
+    private String name;
+    private String surname;
+    private int count;
 
     public Person(String name, String surname, int count) {
         this.name = name;
@@ -10,5 +10,19 @@ public class Person {
 
     }
 
+    public int getCount() {
+        return count;
+    }
 
+    public String getName() {
+        return name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void spendTicket() {
+        count--;
+    }
 }
